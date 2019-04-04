@@ -72,7 +72,7 @@ still has the ability of loading a large b64 encoded file
 ```
 
 ```
-ps12bat_v2.ps1
+ps12bat_v3.ps1
 
 This is an even more evasive modification but significantly reduces the character limit
 for your script on target. The b64 encoded strings are not written to a file but to 
