@@ -61,3 +61,29 @@ the quality of your powershell code.
 
 Tested running a generated .bat file on Win 10 systems.
 ```
+
+```
+ps12bat_v2.ps1
+
+This is modified since I noticed in dev that av started picking up the file writes to 
+the startup folder. I figure it's a behavioral detection algo so that's removed in this 
+version also now drops the bat bootstrap to c:\temp. Persistence is therefore broken 
+still has the ability of loading a large b64 encoded file
+```
+
+```
+ps12bat_v2.ps1
+
+This is an even more evasive modification but significantly reduces the character limit
+for your script on target. The b64 encoded strings are not written to a file but to 
+variables in the console session. 
+
+Then they are concatenated and then executed so nothing else other than the bat file 
+has any IO operations on the disk. I also included an example rsh.ps1 which is 
+a stripped down version of the tcp version of the async client.
+
+You can also use this as to conceal the launcher.ps1 code to decipher modded b64 strings
+after downloading them using System.Net.Webclient, it does not need to be reverse shell
+code. 
+
+```
